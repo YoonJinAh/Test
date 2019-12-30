@@ -1,0 +1,264 @@
+//2장 -1
+public class UseVariable {
+
+	public static void main(String[] args) {
+	int num1; //변수 num1선언
+	num1 = 10; //변수 num1에 10을 저장
+	
+	int num2 =20; // 변수 num2선언함과 동시에 20으로 초기화
+	int num3 = num1 + num2; // 두 변수의 값을  num3로 덧셈
+	System.out.println(num1 + " + " + num2 + " = " + num3);
+	
+	}
+
+}
+
+
+//2장-2
+public class VariableDecl {
+
+	public static void main(String[] args) {
+	
+		double num1, num2; //동시에 변수 설정
+		double result; // 변수 설정
+		num1 = 1.0000001; //변수 num1에 1.0 저장
+		num2 = 2.0000001; // 변수 num2에 2.0 저장
+		result = num1 + num2; // 두 변수값을 덧셈
+		System.out.println(result); /// 나타나라
+	}
+
+}
+
+
+//2장 -3
+//자바 자료형 - 정수 자료형
+// byte, short, int long 있대
+public class OperatePromotion {
+
+	public static void main(String[] args) {
+
+		int num1 = 11;
+		int num2 = 22;
+		int result = num1 + num2;
+		System.out.println(result);
+	}
+}
+
+
+//2장 -4
+// 문자자료형 char
+//한글 유니코드
+public class CharTypeUnicode {
+
+	public static void main(String[] args) {
+		char ch1 = '헐'; //문자 저장 문자는 ''으로 표현한다.
+		char ch2 = '확';
+		char ch3 = 54736; // 헐의 유니코드 값
+		char ch4 = 54869;
+		char ch5 = 0xD5D0; // 유니코드 조합값?
+		char ch6 = 0XD655;
+		System.out.println(ch1 + " " + ch2); // ch1, ch2 값 한번에 나타나라아ㅏ
+		System.out.println(ch3 + " " + ch4);
+		System.out.println(ch5 + " " + ch6);
+
+	}
+
+}
+
+
+//2장 -5
+//문자 자료형
+// 히라가나 유니코드
+
+public class UnicodeJapan {
+
+	public static void main(String[] args) {
+	char ch1 = 0x3041;
+	char ch2 = 0x3051;
+	char ch3 = 0x3061;
+	char ch4 = 0x3071;
+	System.out.println(ch1 + " " + ch2 + " " + ch3 + " " + " " + ch4);
+
+	ch1 = 0x3043;
+	ch2 = 0x3061;
+	ch3 = 0x3063;
+	ch4 = 0x3073;
+	System.out.println(ch1 + " " + ch2 + " " + ch3 + " " + ch4);
+	}
+
+}
+
+
+//2장 -6
+// 논리 자료형 boolean
+
+public class Boolean {
+
+	public static void main(String[] args) {
+		boolean b1 = true; //지정
+		boolean b2 = false;
+		System.out.println(b1); // b1이 가진 값 출력
+		System.out.println(b2); // b2 ㅇㅇ
+		
+		int num1 = 10; // 지정
+		int num2 = 20; //ㅇㅇ
+		System.out.println(num1 < num2); // 큰게 맞나 아니가
+		System.out.println(num1 > num2);
+		
+
+	}
+
+}
+
+
+//2장 한번 쳐봄
+
+
+public class Ex_Constants {
+
+	public static void main(String[] args) {
+	
+		/*
+		1.Long형 정수는 알아서 컴파일 안해줌  그래서 System.out.println(3147483647 + 314748648); 
+		이렇게 하면  정수형 크기가 너무커서 오류 뜨기 때문에 대소문자 L써야지 정상적으로 컴파일 가능
+		*/
+		System.out.println(3147483647L + 314748648L);
+	
+	
+	System.out.println("double형 실수 : " + (3.0004999 + 2.0004999)); //double형 실수로 표현된거 나타내고 싶으면
+	System.out.println("double형 실수 표시해줌 : " + (3.0004999D + 2.0004999D)); //요로케 대소문자 D,,, 뭐래
+	
+	
+	System.out.println("float형 : " + (3.0004999f + 2.0004999f));
+	//float형으로 하면 double랑 덧셈결과가 다른디? ->float형은 정밀도가 낮대 왜? 몰라 고예은 전화 안받네
+	
+	}
+}
+
+///2장 끝/////
+
+//3장 -1
+// 상수 갖는 특징확인
+
+//변수 선언시 변수 앖에 final를 지정해주면 변수는 상수로 변함.
+// 두가지 특징 있음
+//1. 값을 한 번만 할당 할 수 있음.
+//2. 한 번 할당된 값은 변경 불가능.
+
+//관례상의 상수 이름은  둘 이상 단어 적을땐 언더 바(_)붙이고, 대문자로 적어야함
+public class Constants {
+
+	public static void main(String[] args) {
+		final int MAX_SIZE = 100; //  값 지정
+		final char CONST_CHAR = '상'; // 이것두 지정
+		final int CONST_ASSIGNED; // ㅇㅇ
+		CONST_ASSIGNED = 12; // 값을 할당하지 않은 애한테 상수 값 할당해줌
+		
+		System.out.println("상수1 : " + MAX_SIZE );
+		System.out.println("상수2 : " + CONST_CHAR);
+		System.out.println("상수3 : " + CONST_ASSIGNED);
+	}
+
+}
+
+
+//3장-2
+//정수형 상수의 표현 방법
+//다양한 진수를 int형으로 표현
+
+
+public class IntegerLiterals {
+
+	public static void main(String[] args) {
+		int num1 = 123; //10진수 표현
+		int num2 = 0123; // 8진수 표현
+		int num3 = 0x123; //16진수 표현
+		
+		System.out.println("num1 : " + num1); //num1 나타나라
+		System.out.println("num2 :" + num2); //너두
+		System.out.println("num3 : " + num3); // 너두 
+		
+		System.out.println("11 + 22 + 33 = " + (11 + 22 + 33) ); // 십진수로 표현한 숫자  = 덧셈 결과
+		System.out.println("011 + 022 + 033 = " + (011 + 022 + 033));  //너두 더해
+		System.out.println("0x11 + ox22 + 0x33 = " + (0x11 + 0x22 + 0x33)); //너두 더해
+	}
+
+}
+
+
+//3장 -3
+
+public class EscapeSequences {
+
+	public static void main(String[] args) {
+		
+		System.out.println("AB" + '\b' + 'C'); //AB후 백스페이스 후 C
+		System.out.println("AB" + '\t' + 'C'); //AB에서 탭 후 C
+		System.out.println("AB" + '\n' + 'C'); //개 행 문자
+		System.out.println("AB" + '\r' + 'C');//캐리지 리턴 문자 
+		
+		
+		//System.out.println('\n' + "AC" + '\r' + 'F');
+		
+	}
+
+}
+
+
+//3장 -4
+
+public class UnicodeEscapes {
+
+	public static void main(String[] args) {
+
+		System.out.println("오늘의 환율은 1$에 0.88" + '\u20AC' + "입니다.");//€의 유니코드 적어서  €이거 나타내기
+	}
+
+}
+
+////3장 끝////
+
+
+//4장 -1
+public class ArithOp {
+
+	public static void main(String[] args) {
+		
+		int num1 = 7;
+		int num2 = 3;
+		
+		System.out.println("num1 + num2 = " + (num1 + num2));
+		System.out.println("num1 - num2 = " + (num1 - num2));
+		System.out.println("num1 * num2 = " + (num1 * num2));
+		System.out.println("num1 / num2 = " + (num1 / num2));
+		System.out.println("num1 % num2 = " + (num1 % num2));
+
+	}
+
+}
+
+
+//4장 -2
+
+public class CompAssignOp {
+
+	public static void main(String[] args) {
+
+		short num = 10;
+		num = (short)(num + 77L);
+		int rate = 3;
+		rate = (int) (rate * 3.5);
+		System.out.println(num);
+		System.out.println(rate);
+		
+		num = 10;
+		num += 77L;
+		num = 3;
+		num *= 3.5;
+		System.out.println(num);
+		System.out.println(rate);
+	}
+
+}
+ 
+
