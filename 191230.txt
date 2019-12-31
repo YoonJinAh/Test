@@ -1,0 +1,234 @@
+//4장 -2
+
+public class CompAssignOp2 {
+
+	public static void main(String[] args) {
+
+		short num = 10;
+		num = (short)(num + 77L);
+		int rate = 3;
+		rate = (int) (rate * 3.5);
+		System.out.println(num);
+		System.out.println(rate);
+		
+		num = 10;
+		num += 77L;
+		num = 3;
+		num *= 3.5;
+		System.out.println(num);
+		System.out.println(rate);
+	}
+
+}
+
+////답 다르게 나오고 잘 모르겠음
+
+
+//4장-3
+
+public class RelationalOp {
+
+	public static void main(String[] args) {
+
+		System.out.println("3>=2 : " + (3>=2)); //3이 2보다 같거나 큰가?
+		System.out.println("3<=2 : " + (3<=2)); //3이 2보다 같거나 작은가?
+		System.out.println("7.00==7 : " +(7.0==7)); //7.0과 7은 같다고 할 수 있는가?
+		System.out.println("7.0 !=7" +(7.0!=7)); //3과 2는 다른것인가?
+		
+	}
+
+}
+
+
+//4장-4
+
+public class LogicalOp {
+
+	public static void main(String[] args) {
+		int num1 = 11;
+		int num2 = 22;
+		boolean result;
+		
+		//변수 num1에 저장된 값이 1과 100사이의 수인가?
+		result = (1 < num1) && (num1 < 100); //&&는 둘 다 true여야만 결과가 true
+		System.out.println("1초과 100미만인가? " + result);
+		
+		//변수 num2에 저장된 값이 2 또는 3의 배수인가?
+		result = ((num2 % 2)==0) || ((num2 % 3)==0); // ||는 둘 중 하나만 true여도 true
+		System.out.println("2또는 3의 배수인가 ? " + result);
+	
+		
+		//변수 num1이 0인가?-책에 적힌거
+		result = !(num1 != 0); //!는 견산결과가 true면 false로 나타남 ->두번 !해서 false로 나타남
+		System.out.println("0인가? " + result);
+		
+		
+		//변수 num1이 0인가? ver2
+		result = (num1 != 0); // true임
+		System.out.println("0인가?-ver2 : " + result);
+		
+		
+		
+	}
+
+}
+
+
+//4장 -5
+
+public class SCE {
+
+	public static void main(String[] args) {
+
+		int num1 = 0;
+		int num2 = 0;
+		boolean result;
+		
+		result = ((num1 += 5) < 0 && (num2 += 10) > 0); 
+		// &&는 둘 다 true여야하는데,  먼저 계산하는 num1이 false라서 num2은 계산도 안하고 false로 끝남 
+		System.out.println("result = " + result);
+		System.out.println("num1 = " + num1);
+		System.out.println("num2 = " + num2 + '\n');
+		
+		result = ((num1 += 10) > 0) || ((num2 += 10) > 0);
+		// ||는 둘 중 하나만 true여도 true로, 선연산자인 num1이 true이므로 num2 확인 안함.
+		System.out.println("result = " + result);
+		System.out.println("num1 = " + num1); // 위에서 num1 값이 저장?되서 15로 나옴
+		System.out.println("num1 = " + num2);
+		
+	}
+
+}
+
+
+
+//4-6 p92쪽
+
+public class UnaryAddMin {
+
+	public static void main(String[] args) {
+		
+		short num1 = 5;
+		System.out.println(+num1);
+		System.out.println(-num1);
+		
+		short num2 = 7;
+		short num3 = (short)(+num2); // num3에 +num2값 저장
+		short num4 = (short)(-num2); // num4에 -num2값 저장됨
+		System.out.println(num3);
+		System.out.println(num4);
+	}
+
+}
+
+
+//4장-7 P94
+
+public class PrefixOp {
+
+	public static void main(String[] args) {
+		
+		int num = 7;
+		System.out.println(++num); // 1값을 더한 뒤 더한값 출력.
+		System.out.println(++num); // 위의 값에 1을 더한뒤에 출력.
+		System.out.println(num); //그대로 출력
+	}
+
+}
+
+
+//4장-8  P95
+
+public class PostfixOp {
+
+	public static void main(String[] args) {
+
+		int num = 5;
+		System.out.print((num++)+ " "); // 출력 한 뒤에 값이 더해짐
+		System.out.print((num++) + " "); // 똑같이 
+		System.out.print(num + "\n"); // 위에서 출력한 뒤에 1이 더해지ㅣㄴ깐 얘도 1증가해서 출력대네
+		
+		System.out.print((num--) + " "); // 출력후에 값 감소
+		System.out.print((num--) + " "); // 얘도
+		System.out.print(num); // 얘두
+	}
+
+}
+
+	//println은 자동으로 줄 바꿈해주고, print는 줄 바꿈 하지않음.
+	//(++num)얘는 출력전에 값을 더해서 출력하고, (num++)얘는 출력 후에 값이 더해져서 다음 출력값에서 값이 올라감?
+
+
+
+//4장 -9 P96
+
+public class BitOpMeans {
+
+	public static void main(String[] args) {
+		
+		byte n1 = 13; //1101
+		byte n2 = 7; //  111
+		byte n3 = (byte)(n1&n2); // 두 비트가 모두 1일때, 1을  반환해서 연산 가능함.
+		System.out.println(n3); // 2^2 + 2^0 = 5
+	
+	}
+
+}
+
+//4장 -10 P99
+public class BitOperator {
+
+	public static void main(String[] args) {
+		
+		byte n1 = 5; //  00000101
+		byte n2 = 3; //  00000011
+		byte n3 = -1; // 11111111 (....?)
+		
+		byte r1 = (byte)(n1 & n2); // 00000001
+		byte r2 = (byte)(n1 | n2); // 00000111
+		byte r3 = (byte)(n1 ^ n2); // 00000110
+		byte r4 = (byte)(~n3); // 00000000
+		
+		System.out.println(r1); // 1
+		System.out.println(r2); // 7
+		System.out.println(r3); // 6
+		System.out.println(r4); // 0
+		
+	}
+
+}
+
+//4장 -11 P.101
+
+public class BitShiftOp {
+
+	public static void main(String[] args) {
+
+		byte num;
+		
+		num = 2; // 00000010
+		System.out.print((byte)(num << 1) + " "); // 00000100 왼쪽으로 한칸
+		System.out.print((byte)(num << 2) + " "); // 00001000 왼쪽으로 두칸
+		System.out.print((byte)(num << 3) + " " + '\n'); // 00010000 왼쪽으로 세칸
+		
+		num = 8; // 00011000
+		System.out.print((byte)(num >> 1) + " "); //오른쪽으로 한칸
+		System.out.print((byte)(num >> 2) + " "); // 오른쪽으로 두칸
+		System.out.print((byte)(num >> 3) + " " + '\n'); //오른쪽으로 세칸
+		
+		num = -8; // 11111000
+		System.out.print((byte)(num >> 1) + " "); // 오른쪽으로 한칸
+		System.out.print((byte)(num >> 2) + " "); // 오른쪽 두칸
+		System.out.print((byte)(num >> 3) + " " + '\n'); //세칸
+	
+	// '<<' 이 방향은 왼쪽으로 밀려서 값이 두배로 커지고
+	// '>>' 이 방향은 오른쪽으로 밀려서 2로 나눈 값이 나옴.
+	}
+
+}
+
+
+
+
+
+
