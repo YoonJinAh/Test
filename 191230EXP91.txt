@@ -1,0 +1,148 @@
+
+//4장 예제문제 1번
+//문제 : 다음 문장을 실행하면 변수에는 각각 얼마가 저장되겠는가?
+public class P91EX1 {
+
+	public static void main(String[] args) {
+
+		int num1 = 10;
+		int num2 = 20;
+		int num3 = 30;
+		
+		num1 = num2 = num3;
+		
+		System.out.println(num1);
+		System.out.println(num2);
+		System.out.println(num3);
+		
+		//=는 오른쪽부터 계산되니께 num1,2,3모두 30으로 나타남
+	}
+
+}
+
+//91페이지 4장 예제 2번
+//문제 : SCE.java 코드 실행 결과에서 num2의 값이 증가하지 않았는데 , 어떻게 수정해야 증가하겠냐?
+
+public class P91EX2 {
+
+	public static void main(String[] args) {
+
+		int num1 = 0;
+		int num2 = 0;
+	
+		boolean result;
+		
+		System.out.println("내가 적은거");
+		result = ! ((num1 += 10) < 0 != (num2 += 10) > 0); 
+		// &&는 둘 다 true여야하는데,  먼저 계산하는 num1이 false라서 num2은 계산도 안하고 false로 끝남 
+		System.out.println("result = " + result);
+		System.out.println("num1 = " + num1);
+		System.out.println("num2 = " + num2 + '\n');
+		
+		result = ! ((num1 += 10) > 0) != ((num2 += 10) > 0);
+		// ||는 둘 중 하나만 true여도 true로, 선연산자인 num1이 true이므로 num2 확인 안함.
+		System.out.println("result = " + result);
+		System.out.println("num1 = " + num1); // 위에서 num1 값이 저장?되서 15로 나옴
+		System.out.println("num2 = " + num2);
+	
+		
+		System.out.println('\n' + "답안지");
+		int num3 = 0;
+		int num4 = 0;
+        num3 += 10;
+        num4 += 10;        
+        result = (num3 < 0) && (num4 > 0);
+
+        System.out.println("result = " + result);
+        System.out.println("num3 = " + num3);
+        System.out.println("num4 = " + num4 + '\n');
+		
+        num3 += 10;
+        num4 += 10;        
+        result = (num3 > 0) || (num4 > 0);
+
+        System.out.println("result = " + result);
+        System.out.println("num3 = " + num3);
+       	System.out.println("num4 = " + num4);
+	
+	}
+
+}
+
+
+//4장 예제3번
+//문제 : 식의 계산 결과를 출력하는 프로그램을 작성해보자.
+
+public class P91EX3 {
+
+	public static void main(String[] args) {
+		
+		int result = ((25*5)+(36-4)-72)/5;
+		System.out.println(result);
+		
+	}
+
+}
+
+
+//4장 예제4
+public class P91EX4 {
+
+	public static void main(String[] args) {
+
+		System.out.println("내가 품");
+		int num1 = 3+6;
+		int num2 = 9;
+		int num3 = 12;
+		
+	
+		System.out.println("3 + 6 = " + num1);
+		System.out.println("3 + 6 + 9 = " + (num1+num2));
+		System.out.println("3 + 6 + 9 + 12 = " + (num1 + num2 +num3));
+		
+		
+		//답지
+		System.out.println('\n' + "정답지");
+		  int result = 3 + 6;
+	        System.out.println("3 + 6 = " + result);
+	        
+	        result += 9;
+	        System.out.println("3 + 6 + 9 = " + result);
+	        
+	        result += 12;
+	        System.out.println("3 + 6 + 9 + 12 = " + result);
+	}
+
+}
+
+//4장 예제5번
+//문제  : 변수 n1,2,3이 다음과 같을 때 n1>n2>n3이면, true, 아니면 false를 출력하는 프로그램을 작성해보자.
+
+public class P91EX5 {
+
+	public static void main(String[] args) {
+		
+		int n1;
+		int n2;
+		int n3;
+		boolean result;
+		n1 = ((25 + 5) + (36 / 4) - 72)*5;
+		n2 = ((25 * 5) + (36 - 4) + 71)/4;
+		n3 = (128/4)*2;
+		
+		result = ((n1>n2) && (n2>n3));
+		System.out.println(result);
+		
+		//답지
+		  System.out.println('\n' + "답지");
+		  
+	     int J1 = ((25 + 5) + (36 / 4) - 72) * 5;
+	        int J2 = ((25 * 5) + (36 - 4) + 71) / 4;
+	        int J3 = (128 / 4) * 2;
+	         
+	        boolean isBig = (J1 > J2) && (J2 > J3); 
+	        System.out.println(isBig);
+	}
+
+}
+
