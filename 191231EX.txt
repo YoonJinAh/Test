@@ -1,0 +1,214 @@
+//P112 예제 1번
+//문제   : if문 한줄로 만드세요
+public class P112EX1 {
+
+	public static void main(String[] args) {
+		
+			int num  = 120;
+			
+			if((num > 0) && (num % 2) == 0) {
+				System.out.println("양수이면서 짝수");
+				
+		}
+		
+	}
+
+}
+
+
+//P112쪽 예제 2번
+//문제 : CondOp.java 를 조건 연산자를 사용하지 않고 if~else문을 사용하시오.
+public class P112EX2 {
+
+	public static void main(String[] args) {
+		int num1 = 50;
+		int num2 = 100;
+		int big;
+		int diff;
+			
+			if(num1 > num2) 
+			big = num1;
+			else
+				big = num2;
+				System.out.println("큰 수  : " + big);
+			
+		
+			if(num1 > num2)
+				diff = num1 -num2;
+				else
+					diff = num2 - num1;
+			System.out.println("절댓값 : " + diff);
+	}
+
+}
+
+
+
+--------------P118------------------
+//P118쪽 문제 1
+//문제 : SwitchBreak를 switch문이 아닌 if ~else문으로 바꿔보라.
+
+public class P118EX1 {
+
+	public static void main(String[] args) {
+		
+		int n = 3;
+		
+		if(n==4) {
+			System.out.println("Simple Java");
+		}
+			else if (n==2) {
+				System.out.println("Funny Java");
+			}
+			else if(n==3) {
+				System.out.println("Fantastic Java");
+			}
+			else {
+			System.out.println("The best programming language");
+			
+			}
+			System.out.println("Do you like Java");
+	
+		//답안지
+        System.out.println(" \n" + "답안지");
+        if(n == 1)
+            System.out.println("Simple Java");
+        else if(n == 2)
+            System.out.println("Funny Java");
+        else if(n == 3)
+            System.out.println("Fantastic Java");
+        else
+            System.out.println("The best programming language");
+        
+        System.out.println("Do you like coffee?");	
+        
+	}
+
+	}
+
+
+//P118 예제 2번
+//문제 : if ~else코드를 switch문을 이요하는 형태로 변경해보자 
+//잘 모르겠어!!!!!!!!!!!!!!!!!!!!
+
+public class P118EX2 {
+
+	public static void main(String[] args) {
+		
+		int n = 24;
+			
+			switch(n / 10) {
+	       
+			case 0:	
+	            System.out.println("0이상 10미만의 수");
+	            break;
+	        case 1:
+	            System.out.println("10이상 20미만의 수");
+	            break;
+	        case 2:
+	            System.out.println("20이상 30미만의 수");
+	            break;
+	        default:
+	            System.out.println("음수 혹은 30 이상의 수");
+			}
+		
+		}
+	}
+
+		/*원래 코드
+		 * if(n >= 0 && n < 10)
+			System.out.println("0이상 10미만의 수");
+		else if(n >= 0 && n < 20)
+			System.out.println("10이상 20미만의 수");
+		else if(n >= 20 && n < 30)
+			System.out.println("20이상 30 미만의 수");
+		else
+			System.out.println("음수 혹은 30 이상의 수");
+		 */
+	
+
+
+//5장 P.122 예제1번
+//문제 : 1부터 99까지의 합을 구하는 프로그램을 작성하되 while문을 이용해서 작성해보자
+
+public class P122EX1 {
+
+	public static void main(String[] args) {
+		
+		int num = 1;
+		int sum = 0;
+		
+		while(num < 100) {
+			sum += num; //sum = sum+num -> 변수 sum에 num의 값이 증가하면서 저장?
+			num++; //출력 후 1씩 증가
+		}
+			System.out.println("1부터 99까지의 합 : " + sum);
+	}
+
+
+}
+
+
+//P.122 5장 예제2번
+//문제 : 1부터 100까지 출력하고 이어서 꺼꾸로 100에서 1까지 출력하는 프로그램을 작성해보자. 가급적 while문과 do~while문을 한번씩 사용해서 구현하자.
+
+public class P122EX2 {
+
+	public static void main(String[] args) {
+
+		int num = 1;
+		
+		while(num <= 100) {
+			System.out.println(" 1부터 100까지 출력  = " + num);
+			num++;
+			
+	}System.out.println("\n");
+		
+		int num1 = 100;
+		
+		do {
+		System.out.println(" 100부터 1까지의 출력 = " + num1);
+		num1--;
+		
+		}while(num1 > 0);
+		
+		//정답지
+		System.out.println("\n" + "정답지");
+		   int an = 1;
+	         
+	        while(an <= 100)
+	            System.out.println(an++);
+	        
+	        do {
+	            System.out.println(--an);
+	        } while(an>1);
+		
+		
+	}
+
+}
+
+
+//P122 5장 예제3번
+//문제 : 1000이하의 자연수 중에서 2의 배수이자 7의 배수인 수를 출력하고, 그 수들의 합을 구해서 출력하는 프로그램을 while문을 이용해서 작성해보자.
+//빡대가리야 난,
+public class P122EX3 {
+
+	public static void main(String[] args) {
+		int num = 1;
+		int sum = 0;
+		
+		while(num <= 1000) {
+			if((num %2)==0 && (num %7)==0) {
+			System.out.println(num);
+			sum +=num;
+		
+		
+			
+			}
+			num ++;
+		} System.out.println("2와 7의 배수들의 합 : " + sum);
+	}
+}
+
+
