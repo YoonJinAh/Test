@@ -1,0 +1,197 @@
+//5장 -1 P.104쪽
+public class IEBasic {
+
+	public static void main(String[] args) {
+
+		int n1 = 5;
+		int n2 = 7;
+		
+		//if문
+		if(n1 < n2) {
+			System.out.println("n1 < n2 is true"); // n2가 n1보다 크면 나타나는 문장
+		}	
+		
+		//if문 ~ else문
+		if(n1 == n2) 
+			System.out.println("n1 == n2 is true"); // n1과 n2가 같으면 나타나는 문장
+		
+		else 
+			System.out.println("n1 == n2 is false"); // 위 문장이 false일때 나타나는 문장
+		
+	
+	}
+
+}
+ 
+
+//5장 -2 P.106
+
+public class IEIE {
+
+	public static void main(String[] args) {
+		
+		int num = 120;
+		
+		if(num < 0) // 처음으로 여기서 검사
+			System.out.println("0 미만");
+		
+		else if(num < 100) // 100안넘으면 여기서 한번 더 검사
+			System.out.println("0 이상 100 미만");
+		
+		else //위 문장도 틀리면 이 문장 실행함.
+			System.out.println("100 이상");
+	}
+
+}
+
+
+//5장-3 P.110
+
+public class CondOp {
+
+	public static void main(String[] args) {
+
+		int num1 = 50;
+		int num2 = 100;
+		int big;
+		int diff;
+		
+		big = (num1 > num2) ? num1 : num2;
+		System.out.println("큰 수 : " + big);
+		
+		diff = (num1 > num2) ? (num1 - num2) : (num2 - num1);
+		System.out.println("절댓값 : " + diff);
+		
+		/* 
+		big =  (num1 > num2) ? (num1 : num2) 
+	 	-> 물음표 앞에 있는 조건이 true이면 , ':'의 왼쪽에 있는 값이 반환되고, false이면 ':'의  오른쪽에 있는 값이 반환된다.
+	 */
+	
+	} 
+
+}
+
+
+//5장 -4
+
+public class SwitchBasic {
+
+	public static void main(String[] args) {
+		
+		int n = 3;
+		
+		switch(n) {
+		case 1:
+			System.out.println("Simple Java");
+		case 2:
+			System.out.println("Funny Java");
+		case 3:				//n이 3이므로 실행 시작
+			System.out.println("Fantastic Java");
+			default:		//더 이상 해당되는 case없어서 여기서 실행
+				System.out.println("The best programming language");
+		}
+
+		System.out.println("Do you like Java"); //출력
+	}
+
+}
+
+
+//5장 -5 P116쪽
+public class SwitchBreak {
+
+	public static void main(String[] args) {
+		int n = 3;
+		
+		switch(n) {
+		case 1:
+			System.out.println("Simple Java");
+		case 2:
+			System.out.println("Funny Java");
+		case 3:				//n이 3이므로 실행 시작
+			System.out.println("Fantastic Java");
+			break; //break문 사용으로 switch문 벗어나게 됨. 괄호밖으로 ㄱ
+			
+		default:		//break문 때문에 실행 ㄴㄴ
+				System.out.println("The best programming language");
+		}
+
+		System.out.println("Do you like Java"); //출력
+	}
+
+}
+
+
+//5장 -5(2) P117쪽
+//-5와 같지만 레이블을? 이어서 둔 것.
+
+public class SwitchBreak2 {
+
+	public static void main(String[] args) {
+		
+		int n = 3;
+		
+		switch(n) {
+		case 1:
+		case 2:
+		case 3:
+			System.out.println("case 1,2,3");
+			break;
+			
+		default:
+			System.out.println("default");
+		}
+
+	}
+
+}
+
+
+//5장 -6 P.119
+
+public class WhileBasic {
+
+	public static void main(String[] args) {
+
+		int num = 0; // int는 0
+		 while(num < 5) { // 0,1,2,3,4 -> num < 5 만족하면 반복 실행.
+			 System.out.println("I like Java " + num);
+			 num++; //출력 후 값 증가
+			 
+		 }
+	}
+
+}
+
+
+//5장 -7 P.121
+
+public class DoWhileBasic {
+
+	public static void main(String[] args) {
+		
+		int num = 0;
+		
+		do {
+			System.out.println("I don't like Java" + num);
+			num++; //출력 뒤 1씩 커짐
+		
+		} while(num < 5); // num < 5 까지 반복, 5되면 반복끝
+	}
+
+}
+
+
+
+//5장-8 P.123
+
+public class ForBasic {
+
+	public static void main(String[] args) {
+		for(int i = 0; i < 5; i++) // i는 0부터 4까지 1씩 커지면서 반복
+			System.out.println("I like home " + i);
+	}
+
+}
+
+
