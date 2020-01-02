@@ -1,0 +1,112 @@
+//P.126 5장-9
+
+public class BreakBasic {
+
+	public static void main(String[] args) {
+		int num = 1;
+		boolean search = false;
+		
+		//처음 만나는 5의 배수이자 7의 배수인 수를 찾는 반복문
+		while(num < 100) {
+			if(((num % 5)==0) && ((num % 7)==0)) {
+				search = true;
+				break;
+			}
+		num++;
+		}
+		
+		if(search)
+			System.out.println("찾는 정수 : " + num);
+		else
+			System.out.println("5의 배수이자 7의 배수인 수를 찾지 못하였습니다.");
+	}
+
+}
+
+
+//P.127 5장 -10
+
+public class ContinueBasic {
+
+	public static void main(String[] args) {
+		 
+		int num = 0;
+		int count = 0;
+		
+		while((num++) < 100) {
+			if(((num % 5) != 0) || ((num % 7) != 0 ))
+				continue;
+			count++;
+			System.out.println(num);
+			
+		}
+		System.out.println("count : " + count);
+	}
+
+}
+
+
+//P.128 5장 11
+public class InfinityLoop {
+
+	public static void main(String[] args) {
+
+		int num = 1;
+		while(true) {
+			if(((num % 6) ==0) && ((num % 14)==0))
+				break;
+			num++;
+			
+		}
+		System.out.println(num);
+	}	
+
+}
+
+
+//P.129 5장 - 12
+//모든 홀수를 더할때 그 합이 언제 1000을 넘는지, 그리고 1000을 넘어서 ㄴ값은 얼마나 되는지 계산하는 ㅜㅊㄹ력 프로그램을 작서하시오 
+
+public class P129EX2 {
+
+	public static void main(String[] args) {
+		
+		int result = 0;
+		int num = 1;
+		
+		while(true) {
+			if(num % 2 != 0) 
+				result +=num;	
+						
+			if(result > 1000) { 
+					
+		System.out.println(num + "를 더했을때 1000이 넘는다.");
+		System.out.println("그 합은 = " + result);
+		break;
+		
+			}
+			num ++;	
+		}
+	}
+}
+
+
+//5장 13 P.131
+
+public class ForInFor {
+
+	public static void main(String[] args) {
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.println("--------------");
+			
+			for(int j = 0; j < 3; j++) {
+				System.out.print("[" + i + "," + j + "]");
+			}
+			System.out.print('\n');
+		}
+
+	}
+
+}
+ 
