@@ -1,0 +1,54 @@
+//P.125 예제 1번 
+//문제 : 1부터 10까지의 곱의 결과를 출력하는 프로그램을 for문을 이용해서 작성해보자.
+
+public class P125EX1 {
+
+	public static void main(String[] args) {
+
+		int aa = 1;
+		for(int i = 1; i <= 10; i++) //i는 1부터 10하의 수까지 1씩 늘어난대
+		aa *=i; //aa가 그 답이래
+		System.out.println("1부터 10까지의 곱 = " + aa);
+		
+			}
+
+}
+
+
+//P.125 예제2번
+//문제 :  구구단 중 5단을 출력하는 프로그램 for문 사용.
+
+public class P125EX2 {
+
+	public static void main(String[] args) {
+
+		for(int i = 1; i <= 9; i++ ) {
+			System.out.println("5 * " + i + " = " + 5*i );
+		}
+	}
+
+}
+
+
+-----------P.129---------
+//P.129 5장 예제 1번
+//ContinueBasic 예문을 while에서 for문으로 바꿔라
+
+public class P129EX1 {
+
+	public static void main(String[] args) {
+		
+		int count = 0;
+		
+		for(int i = 0; i < 100; i++) {
+			if(((i % 5) != 0) || ((i % 7) != 0 ))
+				continue;
+			count++;
+			System.out.println(i);
+		}
+		System.out.println("count : " + count);	
+	}
+
+}
+
+
